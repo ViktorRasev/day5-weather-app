@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+        <header>
+            <h1 class ="adress">${data.address}</h1>
+            <h5 class="resolved-address">${data.resolvedAddress}</h5>
+        </header>
+     <main>
+        <h3 class="description">${data.description}</h3>
+        <div class="weather-div">
+            <p class="temperature"></p>
+            <p class="fells-like">Feels like: ${data.currentConditions.feelslike}°C</p>
+            <p class="humidity">Humidity: ${data.currentConditions.humidity}%</p>
+            <p class="pressure">Pressure: ${data.currentConditions.pressure}hPa</p>
+            <p class="uv-index">UV Index: ${data.currentConditions.uvindex}</p>
+        </div>
+        <div class="btnDiv">
+            <button class="refresh-btn">Refresh</button>
+            <p class="counter"></p>
+          </div>
+    </div>
+     </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

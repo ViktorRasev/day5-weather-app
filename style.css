@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 100px auto;
+  background-color: rgb(73, 197, 191);
+  max-width: 700px;
+  border-radius: 7px;
+  padding: 1rem;
+}
+
+.adress {
+  margin: 0;
+}
+.resolved-address {
+  margin: 0 0 1.5rem 0;
+  font-weight: 200;
+}
+
+p {
+  margin: 0.2rem;
+}
+
+.btnDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+}
+button {
+  width: 5rem;
+  height: 2rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+button:hover { 
+  background-color: rgb(216, 216, 216);
+}
