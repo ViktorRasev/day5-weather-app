@@ -11,6 +11,24 @@ const counter = document.querySelector(".counter");
 
 const apiKey = "LB2RHRDMDVFNMMB9D6YPNMFAV";
 
+
+window.addEventListener("load", currentTime)
+
+let onResettime
+function currentTime(){
+  onResettime = new Date().getTime() / 60_000 
+  counter.textContent = `Updated 0 minutes ago`
+}
+
+let timeAgo
+let result
+setInterval(() => { 
+  timeAgo = new Date().getTime() / 60_000
+  result = Math.floor((timeAgo - onResettime))
+  counter.textContent = `Updated ${Math.floor((result))} minutes ago`
+}, 1000)
+
+
 async function getWeatherData() {
   const response = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Praha?unitGroup=metric&key=${apiKey}&contentType=json`
@@ -28,8 +46,9 @@ async function getWeatherData() {
   humidity.textContent = `Humidity: ${data.currentConditions.humidity}%`;
   pressure.textContent = `Pressure: ${data.currentConditions.pressure}hPa`;
   uvIndex.textContent = `UV Index: ${data.currentConditions.uvindex}`;
-}
 
+  currentTime()
+}
 
 getWeatherData();
 
@@ -37,6 +56,8 @@ setInterval(() => {
   getWeatherData();
 }, 300_000);
 
+
 refreshBtn.addEventListener("click", () => {
   getWeatherData();
+  currentTime()
 });
