@@ -30,6 +30,7 @@ async function getWeatherData() {
   uvIndex.textContent = `UV Index: ${data.currentConditions.uvindex}`;
 }
 
+
 getWeatherData();
 
 setInterval(() => {
